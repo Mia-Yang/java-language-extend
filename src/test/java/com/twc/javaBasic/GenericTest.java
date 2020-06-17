@@ -85,7 +85,13 @@ class GenericTest {
     // <--start
     @SuppressWarnings("unused")
     private static <T extends Number & Comparable<T>> T min(T[] values) {
-        throw new RuntimeException();
+        T min = values[0];
+        for (T element : values) {
+            if (element.compareTo(min) < 0) {
+                min = element;
+            }
+        }
+        return min;
     }
     // --end-->
 
