@@ -337,7 +337,7 @@ class StreamingTest {
 
         // TODO: please implement toList collector using `stream.collect`. You cannot use existing `toList` collector.
         // <--start
-        ArrayList<String> list = null;
+        ArrayList<String> list = stream.collect(Collectors.toCollection(ArrayList::new));
         // --end-->
 
         assertEquals(ArrayList.class, list.getClass());
