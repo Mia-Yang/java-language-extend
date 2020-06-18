@@ -141,7 +141,7 @@ class StreamingTest {
 
         // TODO: please modify the following code to pass the test
         // <--start
-        Stream<Character> flatted = null;
+        Stream<Character> flatted = Stream.of("Naruto", "Kisuke", "Tomoya").flatMap(w -> letters(w));
         // --end-->
         {
             assertArrayEquals(
