@@ -5,6 +5,7 @@ import org.junit.jupiter.api.Test;
 import java.util.*;
 import java.util.function.Consumer;
 import java.util.function.Function;
+import java.util.regex.Matcher;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -160,7 +161,7 @@ class StreamingTest {
 
         // TODO: please modify the following code to pass the test
         // <--start
-        Stream<Integer> finiteStream = null;
+        Stream<Integer> finiteStream = infiniteSequence.limit(10);
         // --end-->
         {
             assertArrayEquals(
