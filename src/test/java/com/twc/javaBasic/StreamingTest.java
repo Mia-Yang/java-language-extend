@@ -196,7 +196,7 @@ class StreamingTest {
 
         // TODO: please modify the following code to pass the test
         // <--start
-        Stream<Character> distinct = null;
+        Stream<Character> distinct = characterStream.distinct().sorted();
         // --end-->
         {
             Character[] characters = distinct.sorted().toArray(Character[]::new);
