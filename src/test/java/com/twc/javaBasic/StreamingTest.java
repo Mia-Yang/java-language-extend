@@ -457,7 +457,7 @@ class StreamingTest {
 
         // TODO: please modify the following code to pass the test
         // <--start
-        Optional<Integer> reduced = null;
+        Optional<Integer> reduced = numbers.stream().reduce((x, y) -> x + y);
         // --end-->
 
         //noinspection ConstantConditions
