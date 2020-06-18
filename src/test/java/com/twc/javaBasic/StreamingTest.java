@@ -223,7 +223,7 @@ class StreamingTest {
 
         // TODO: please modify the following code to pass the test
         // <--start
-        final int expected = 0;
+        final int expected = 2 + 4 + 6 + 8 + 10 + 12 + 14 + 16 + 18;
         // --end-->
 
         assertEquals(expected, holder.getValue().intValue());
@@ -234,8 +234,8 @@ class StreamingTest {
     void should_throws_if_get_value_of_empty_optional() {
         // TODO: please create an empty optional and specify the concrete exception type.
         // <--start
-        Optional<String> empty = null;
-        Class errorType = null;
+        Optional<String> empty = Optional.empty();
+        Class errorType = NoSuchElementException.class;
         // --end-->
 
         assertThrows(errorType, empty::get);
