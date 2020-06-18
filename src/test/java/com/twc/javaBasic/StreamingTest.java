@@ -142,7 +142,7 @@ class StreamingTest {
 
         // TODO: please modify the following code to pass the test
         // <--start
-        Stream<Character> flatted = Stream.of("Naruto", "Kisuke", "Tomoya").flatMap(w -> letters(w));
+        Stream<Character> flatted = Stream.of("Naruto", "Kisuke", "Tomoya").flatMap(StreamingTest::letters);
         // --end-->
         {
             assertArrayEquals(
@@ -418,7 +418,7 @@ class StreamingTest {
         // TODO: implement grouping collector using `stream.collect`. You should use `Collectors.groupingBy` and
         // TODO: downstream collector.
         // <--start
-        Map<String, Long> map = null;
+        Map<String, Long> map = stream.collect(Collectors.groupingBy(KeyValuePair::getKey, Collectors.counting()));
         // --end-->
 
         assertEquals(2, map.size());
@@ -457,7 +457,7 @@ class StreamingTest {
 
         // TODO: please modify the following code to pass the test
         // <--start
-        Optional<Integer> reduced = numbers.stream().reduce((x, y) -> x + y);
+        Optional<Integer> reduced = numbers.stream().reduce(Integer::sum);
         // --end-->
 
         //noinspection ConstantConditions
